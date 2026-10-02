@@ -4,11 +4,14 @@ function crearTarjeta() {
 
     let desde = recuperarNumero("txtDesde");
     let hasta = recuperarNumero("txtHasta");
+    let salto = recuperarNumero("txtSalto");
 
-    for (let i = desde; i <= hasta; i++) {
-        contenido = contenido + "<div class='item'>" + i + "</div>";
-        console.log(contenido);
-        divTarjetas.innerHTML = contenido;
+    if (salto > 0) {
+        for (let i = desde; i <= hasta; i += salto) {
+            contenido = contenido + "<div class='item'>" + i + "</div>";
+            console.log(contenido);
+            divTarjetas.innerHTML = contenido;
+        }
     }
 }
 
